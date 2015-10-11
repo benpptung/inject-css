@@ -1,10 +1,14 @@
 {
   "name": "inject-css",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "inject css into <head> and return an object to unmount the css",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benpptung/inject-css.git"
   },
   "keywords": [
     "css"
