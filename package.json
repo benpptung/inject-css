@@ -1,0 +1,14 @@
+{
+  "name": "inject-css",
+  "version": "0.1.0",
+  "description": "inject css into <head> and return an object to unmount the css",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "Ben P.P. Tung",
+  "license": "MIT"
+}
