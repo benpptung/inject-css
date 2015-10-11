@@ -1,0 +1,1 @@
+inject css into the head and return a function to delete
