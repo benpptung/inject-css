@@ -5,7 +5,7 @@ var is_client = typeof window === 'object'
 
 exports = module.exports = function(css, options) {
 
-  if (inserted[css]) return removeCss
+  if (inserted[css]) return
 
   inserted[css] = true
 
@@ -42,10 +42,10 @@ exports = module.exports = function(css, options) {
   }
 }
 
-exports.getCachedCss = function () {
+exports.getCachedCss = function() {
   return Object.keys(inserted)
 }
 
-exports.delCachedCss = function () {
+exports.delCachedCss = function() {
   inserted = {}
 }
