@@ -6,15 +6,23 @@ inject css into the head and return a function to delete
 ```
 
 const inject = require('inject-css')
+const cssStr = require('./styl.scss')
+const removeCss = inject(cssStr)
 
-const removeCss = inject(require('./styl.scss'))
-
-removeCss() // remove css
+// call removeCss later to remove dom element and cached css
 
 ```
 
-##### React server rendering
+##### For server rendering
 
+get all css inserted by `inject-css`, and render in server
+
+
+```
 const allcss = inject.getCachedCss()
 
-inject.
+inject.delCachedCss() // clean cached css
+
+```
+
+
