@@ -4,7 +4,8 @@
   "description": "inject css into <head> and return an object to unmount the css",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "TIMING=1 eslint . --ignore-pattern node_modules/"
   },
   "repository": {
     "type": "git",
@@ -14,5 +15,10 @@
     "css"
   ],
   "author": "Ben P.P. Tung",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-less": "github:benpptung/eslint-config-less",
+    "eslint-plugin-node": "^5.1.1"
+  }
 }
