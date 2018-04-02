@@ -1,32 +1,51 @@
 'use strict'
 
 var inserted = {}
+var is_client = typeof window === 'object'
 
-module.exports = function(css, options) {
+exports = module.exports = function(css, options) {
 
   if (inserted[css]) return removeCss
+
   inserted[css] = true
 
-  var elm = document.createElement('style')
-  elm.setAttribute('type', 'text/css')
+  var elm = null
+  var head = null
 
-  if ('textContent' in elm) {
-    elm.textContent = css
-  }
-  else {
-    elm.styleSheet.cssText = css
+  if (is_client) {
+    elm = document.createElement('style')
+    elm.setAttribute('type', 'text/css')
+
+    if ('textContent' in elm) {
+      elm.textContent = css
+    }
+    else {
+      elm.styleSheet.cssText = css
+    }
+
+    head = document.getElementsByTagName('head')[0]
+    if (options && options.prepend) {
+      head.insertBefore(elm, head.childNodes[0])
+    }
+    else {
+      head.appendChild(elm)
+    }
   }
 
-  var head = document.getElementsByTagName('head')[0]
-  if (options && options.prepend) {
-    head.insertBefore(elm, head.childNodes[0])
-  }
-  else {
-    head.appendChild(elm)
-  }
+  return removeCss
 
   function removeCss() {
     delete inserted[css]
+
+    if (!is_client) return
     head.removeChild(elm)
   }
+}
+
+exports.getAllCachedCss = function () {
+  return Object.keys(inserted)
+}
+
+exports.delAllCachedCss = function () {
+  inserted = {}
 }
