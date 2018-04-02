@@ -42,10 +42,10 @@ exports = module.exports = function(css, options) {
   }
 }
 
-exports.getAllCachedCss = function () {
+exports.getCachedCss = function () {
   return Object.keys(inserted)
 }
 
-exports.delAllCachedCss = function () {
+exports.delCachedCss = function () {
   inserted = {}
 }
