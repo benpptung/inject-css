@@ -84,9 +84,13 @@ function insert(store, css, options) {
     }
   }
 
+  var called = false // avoid double call
   return removeCss
 
   function removeCss() {
+    if (called) return
+    called = true
+
     delete store[css]
     if (!is_client) return
     head.removeChild(elm)
