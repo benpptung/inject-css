@@ -1,6 +1,6 @@
 {
   "name": "inject-css",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "inject css into <head> and return an object to unmount the css",
   "main": "index.js",
   "scripts": {
