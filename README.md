@@ -20,7 +20,7 @@ Super easy to work with React to add CSS via in SSR or client side
 
 In a general React component: `react-example.js`
 
-```
+```jsx
 'use strict'
 
 /**
